@@ -45,7 +45,7 @@ It will use GET method to obtain the input parameters. `?lengthtype=words&length
 #### Available GET parameters
 
 | Key    | Parameter  | Children          | Usage                                              |
-| ------ | ---------- |:-----------------:| -------------------------------------------------: |
+| :----: | :--------: |:-----------------:| :------------------------------------------------- |
 | action | newtext    |                   | When new text is generated                         |
 | action | newtext    | library           | What library should be used for the generated text |
 | action | newtext    | length            | Length of the generated text                       |
