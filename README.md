@@ -62,10 +62,11 @@ It will use GET method to obtain the input parameters. `?lengthtype=words&length
 Here you will be able to create, edit and remove dictionaries used by the generator.
 
 #### loadLibrary(_Name_, _Language_) function
-    1. _Name:_ Name of the text file which contains the library
-    2. _Language_: Language of the wanted library (maybe will be depreciated)
 
-    * Tries to load library, if it exists it will return the library as an `array`, if not it will return `false`
+1. _Name:_ Name of the text file which contains the library
+2. _Language_: Language of the wanted library (maybe will be depreciated)
+
+* Tries to load library, if it exists it will return the library as an `array`, if not it will return `false`
 
 #### newLibrary(_Name_, _Language_) function
     * Parse text, take each word in lowercase and add it to array.
