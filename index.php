@@ -175,6 +175,7 @@ require_once 'settings.php';
         line-height:2;
         border:2px dashed #ccc;
         padding: 20px;
+        text-align: justify;
     }
 
 
@@ -236,6 +237,13 @@ require_once 'settings.php';
 
 <?php
 
+
+        if($_GET['manual'] == 'add'){
+            $name = 'Harry Potter';
+            $lang = 'cz';
+            $text = '';
+            // $newlibrary = newLibrary($name, $lang, $text);
+        }
 
         if($_GET['action'] == 'newlibrary'){
 

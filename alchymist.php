@@ -11,27 +11,27 @@ function createText($library, $lengthtype, $length){
 
         $toAdd = trim($library[array_rand($library)]);
 
-        if($chance > 3){
-            $rand = rand(1,10);
-            if($rand <= 5){
+        if($chance > PUNC_CHANCE){
+            $rand = rand(1,100);
+            if($rand <= PUNC_PROB){
                 $whatChar = rand(1,100);
                 if($whatChar <= 50){
-                    $toAdd .= '.';
+                    $toAdd .= PUNC_50;
                 }
                 elseif($whatChar > 50 && $whatChar <= 70){
-                    $toAdd .= ',';
+                    $toAdd .= PUNC_20;
                 }
                 elseif($whatChar > 70 && $whatChar <= 80){
-                    $toAdd .= '?';
+                    $toAdd .= PUNC_10;
                 }
                 elseif($whatChar > 80 && $whatChar <= 90){
-                    $toAdd .= '!';
+                    $toAdd .= PUNC_10_2;
                 }
                 elseif($whatChar > 90 && $whatChar <= 95){
-                    $toAdd .= ';';
+                    $toAdd .= PUNC_5;
                 }
                 elseif($whatChar > 95){
-                    $toAdd .= ' -';
+                    $toAdd .= PUNC_2;
                 }
 
 

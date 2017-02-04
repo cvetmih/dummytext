@@ -77,15 +77,6 @@ function newLibrary($name, $lang, $text){
         }
 
 
-        die();
-
-
-
-
-
-
-
-
     }
 
     else{
@@ -112,27 +103,40 @@ function listLibraries($type){
     }
 
     foreach ($directory as $files) { //Check that the contents of the directory are each files  and then do what you want with them after you have the name of the file.
-        if ($files->isFile() && $files->getFilename() !== '.DS_Store') {
+        if ($files->isFile()) {
 
-            $file_name_initial = $files->getFilename();
-            // $my_page = file_get_contents(LIBS. $file_name); //Collect the content of the file.
-            $file_name = explode('.txt', $file_name_initial);
-
-            $file_name = explode('.', $file_name[0]);
-
-            $lang = ' ('. strtoupper($file_name[0]) . ')';
-
-            $file_name = explode('_', $file_name[1]);
-
-            $file_name = str_replace("-", " ", $file_name[0]);
-
-            $file_name = ucwords($file_name);
-
-            if($type == 'ul'){
-                echo '<li><a href="libs/' . $file_name_initial . '" title="Open TXT file with this library">' . $file_name . '</a></li>';
+            $bad = 0;
+            foreach(BAD_FILES as $badfile){
+                if($files->getFilename() == $badfile){
+                    $bad = 1;
+                }
             }
-            elseif ($type == 'select') {
-                echo '<option value="' . $file_name_initial . '">' . $file_name . $lang . '</option>';
+
+
+            if($bad == 0){
+
+                    $file_name_initial = $files->getFilename();
+                    // $my_page = file_get_contents(LIBS. $file_name); //Collect the content of the file.
+                    $file_name = explode('.txt', $file_name_initial);
+
+                    $file_name = explode('.', $file_name[0]);
+
+                    $lang = ' ('. strtoupper($file_name[0]) . ')';
+
+                    $file_name = explode('_', $file_name[1]);
+
+                    $file_name = str_replace("-", " ", $file_name[0]);
+
+                    $file_name = ucwords($file_name);
+
+                    if($type == 'ul'){
+                        echo '<li><a href="libs/' . $file_name_initial . '" title="Open TXT file with this library">' . $file_name . '</a></li>';
+                    }
+                    elseif ($type == 'select') {
+                        echo '<option value="' . $file_name_initial . '" ';
+                        if ($file_name_initial == $_GET['library']) echo ' selected ';
+                        echo '>' . $file_name . $lang . '</option>';
+                    }
             }
 
 
