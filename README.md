@@ -36,13 +36,13 @@ This is my own version of dummy text generator, hopefully it will make some use.
 
 ## Needed files
 
-### Index (_index.php_)
+#### Index (_index.php_)
 
 Here you will be able to choose which type of dummy text you want (not only *Lorem ipsum*).
 
 It will use GET method to obtain the input parameters. `?lengthtype=words&length=20&format=html`
 
-#### Available GET parameters
+##### Available GET parameters
 
 | Key    | Parameter  | Children          | Usage                                              |
 | :----: | :--------: |:-----------------:| :------------------------------------------------- |
@@ -55,44 +55,46 @@ It will use GET method to obtain the input parameters. `?lengthtype=words&length
 | action | newlibrary | newlibraryname    | Name of the new library                            |
 | action | newlibrary | newlibrarylang    | Language of the new library                        |
 
+---
 
-
-### Library (_library.php_)
+#### Library (_library.php_)
 
 Here you will be able to create, edit and remove dictionaries used by the generator.
 
-#### loadLibrary(_Name_, _Language_) function
+##### loadLibrary(_Name_, _Language_) function
 
-1. _Name:_ Name of the text file which contains the library
-2. _Language_: Language of the wanted library (maybe will be depreciated)
+1. **Name:** Name of the text file which contains the library
+2. **Language:** Language of the wanted library (maybe will be depreciated)
 
 * Tries to load library, if it exists it will return the library as an `array`, if not it will return `false`
 
-#### newLibrary(_Name_, _Language_) function
-    * Parse text, take each word in lowercase and add it to array.
-    * Look for bad words, nonsense and duplicates.
-    * Create new `.txt` file with the new library.
+##### newLibrary(_Name_, _Language_) function
 
-#### listLibraries(_Type_) function
-    1. _Type:_ How to list libraries (currently `ol` or `select` - ordered list or select type input)
+* Parse text, take each word in lowercase and add it to array.
+* Look for bad words, nonsense and duplicates.
+* Create new `.txt` file with the new library.
 
-    * Lists all available libraries in wanted way
+##### listLibraries(_Type_) function
+1. **Type:** How to list libraries (currently `ol` or `select` - ordered list or select type input)
 
+* Lists all available libraries in wanted way
 
+---
 
-
-### Alchymist (_alchymist.php_)
+#### Alchymist (_alchymist.php_)
 
 **Alchymist** creates dummy text from the loaded library.
 
-#### createText(_Library_, _LengthType_, _Length_) function
-    1. _Library:_ Library to choose words from
-    2. _LengthType:_ Whether it's words, letters or characters
-    3. _Length:_ Whether it's words, letters or characters
+##### createText(_Library_, _LengthType_, _Length_) function
 
-    * Creates text, then uses `humanize` function to make it look more realistic.
+1. **Library:** Library to choose words from
+2. **LengthType:** Whether it's words, letters or characters
+3. **Length:** Whether it's words, letters or characters
 
+* Creates text, then uses `humanize` function to make it look more realistic.
 
-### Helper files (_helpers.php_)
+---
+
+#### Helper files (_helpers.php_)
 
 Here you will find all the helping functions needed for DTG to work.
