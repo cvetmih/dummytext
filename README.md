@@ -38,12 +38,22 @@ This is my own version of dummy text generator, hopefully it will make some use.
 
 ### Index (_index.php_)
 
-* #### Available GET parameters
-    * Yet to be listed
-
 Here you will be able to choose which type of dummy text you want (not only *Lorem ipsum*).
 
-It will use GET method to obtain the input parameters. `?lang=en&lengthtype=words&length=20&format=html`
+It will use GET method to obtain the input parameters. `?lengthtype=words&length=20&format=html`
+
+#### Available GET parameters
+
+| Key    | Parameter  | Children          | Usage                                              |
+| ------ | ---------- |:-----------------:| -------------------------------------------------: |
+| action | newtext    |                   | When new text is generated                         |
+| action | newtext    | library           | What library should be used for the generated text |
+| action | newtext    | length            | Length of the generated text                       |
+| action | newtext    | lengthtype        | Length measurement (words, letters, characters)    |
+| action | newlibrary |                   | When new library is being created                  |
+| action | newlibrary | newlibrarytext    | Text to be parsed as library                       |
+| action | newlibrary | newlibraryname    | Name of the new library                            |
+| action | newlibrary | newlibrarylang    | Language of the new library                        |
 
 
 
@@ -51,18 +61,18 @@ It will use GET method to obtain the input parameters. `?lang=en&lengthtype=word
 
 Here you will be able to create, edit and remove dictionaries used by the generator.
 
-* #### loadLibrary(_Name_, _Language_) function
+#### loadLibrary(_Name_, _Language_) function
     1. _Name:_ Name of the text file which contains the library
     2. _Language_: Language of the wanted library (maybe will be depreciated)
 
     * Tries to load library, if it exists it will return the library as an `array`, if not it will return `false`
 
-* #### newLibrary(_Name_, _Language_) function
+#### newLibrary(_Name_, _Language_) function
     * Parse text, take each word in lowercase and add it to array.
     * Look for bad words, nonsense and duplicates.
     * Create new `.txt` file with the new library.
 
-* #### listLibraries(_Type_) function
+#### listLibraries(_Type_) function
     1. _Type:_ How to list libraries (currently `ol` or `select` - ordered list or select type input)
 
     * Lists all available libraries in wanted way
@@ -74,7 +84,7 @@ Here you will be able to create, edit and remove dictionaries used by the genera
 
 **Alchymist** creates dummy text from the loaded library.
 
-* #### createText(_Library_, _LengthType_, _Length_) function
+#### createText(_Library_, _LengthType_, _Length_) function
     1. _Library:_ Library to choose words from
     2. _LengthType:_ Whether it's words, letters or characters
     3. _Length:_ Whether it's words, letters or characters

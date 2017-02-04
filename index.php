@@ -239,10 +239,14 @@ require_once 'settings.php';
 
 
         if($_GET['manual'] == 'add'){
-            $name = 'Harry Potter';
-            $lang = 'cz';
+
+            $name = 'New Library';
+            $lang = 'en';
             $text = '';
-            // $newlibrary = newLibrary($name, $lang, $text);
+
+            if(!empty($text) && !empty($name) && !empty($lang)){
+                $newlibrary = newLibrary($name, $lang, $text);
+            }
         }
 
         if($_GET['action'] == 'newlibrary'){
