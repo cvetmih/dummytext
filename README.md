@@ -2,11 +2,26 @@
 
 This is my own version of dummy text generator, hopefully it will make some use.
 
+## Version Log
+
+* *v0.02*
+
+    * Added some styles
+    * Improved 'humanizing' of generated text
+
+* *v0.01*
+
+    * Basic usability, basic design
+    * 'Add a library' feature - creates `TXT` files of scanned text
+    * None security
+    * Only posible to input number of words (no letters, no paragraphs)
+
 ## Planned features
 
 * Multiple languages
-* Custom text input
-* Formatting
+* Length type - letters, paragraphs
+* Formatting - paragraphs, html
+* HTML formatting - add random html tags
 * Lots of other fun stuff
 
 ## Needed files

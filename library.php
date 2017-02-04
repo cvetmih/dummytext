@@ -129,7 +129,7 @@ function listLibraries($type){
             $file_name = ucwords($file_name);
 
             if($type == 'ul'){
-                echo '<li><a href="libs/' . $file_name_initial . '" title="Open TXT file with library">' . $file_name . '</a></li>';
+                echo '<li><a href="libs/' . $file_name_initial . '" title="Open TXT file with this library">' . $file_name . '</a></li>';
             }
             elseif ($type == 'select') {
                 echo '<option value="' . $file_name_initial . '">' . $file_name . $lang . '</option>';
