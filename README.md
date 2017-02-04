@@ -1,4 +1,4 @@
-# README Dummy Text Generator
+# Dummy Text Generator
 
 This is my own version of dummy text generator, hopefully it will make some use.
 
