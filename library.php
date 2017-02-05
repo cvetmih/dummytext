@@ -123,6 +123,17 @@ function listLibraries($type){
 
                     $lang = ' ('. strtoupper($file_name[0]) . ')';
 
+                    if($lang == ' (CZ)'){
+                        $lang_img = '<img src="http://static.webshopapp.com/shops/094414/files/053825012/the-czech-republic-flag-icon-free-download.jpg" class="icon-flag" />';
+                    }
+                    elseif($lang == ' (EN)'){
+                        $lang_img = '<img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1280px-Flag_of_the_United_Kingdom.svg.png" class="icon-flag" />';
+
+                    }
+                    else{
+                        $lang_img = '';
+                    }
+
                     $file_name = explode('_', $file_name[1]);
 
                     $file_name = str_replace("-", " ", $file_name[0]);
@@ -130,7 +141,7 @@ function listLibraries($type){
                     $file_name = ucwords($file_name);
 
                     if($type == 'ul'){
-                        echo '<li><a href="libs/' . $file_name_initial . '" title="Open TXT file with this library">' . $file_name . '</a></li>';
+                        echo '<li><a href="libs/' . $file_name_initial . '" title="Open TXT file with this library">' . $lang_img . $file_name .'</a></li>';
                     }
                     elseif ($type == 'select') {
                         echo '<option value="' . $file_name_initial . '" ';

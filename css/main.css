@@ -1,6 +1,7 @@
 body{
     font-family: 'Raleway', sans-serif;
     background:#fff;
+    background:url('https://www.toptal.com/designers/subtlepatterns/patterns/sayagata-400px.png');
     -webkit-box-sizing:border-box;
      -moz-box-sizing:border-box;
      -ms-box-sizing:border-box;
@@ -50,7 +51,7 @@ label{
             box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.2);
 }
 #libList:hover{
-    height:200px;
+    height:100%;
     overflow:auto;
     color:#E7807B;
 
@@ -85,7 +86,7 @@ label{
     transition:color .1s linear, opacity .6s linear;
     opacity:0;
     display: block;
-    padding:5px 25px;
+    padding:5px 20px;
 }
 
 #libList ul li a:hover{
@@ -191,6 +192,12 @@ input:focus, select:focus, textarea:focus{
 
 }
 
+.icon-flag{
+    max-height:12px;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: -2px;
+}
 
 @keyframes fadein {
 from { opacity: 0; }
