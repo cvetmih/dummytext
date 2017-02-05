@@ -199,9 +199,11 @@ body.no-js {
 	list-style-type: none;
 	display: block;
 	/*background:rgba(0,0,0,.3)*/
+	text-align: center;
 	li {
 		display: inline-block;
 		margin: 0;
+		width:49.6%;
 
 		a {
 			padding: 5px 10px 2px;

@@ -143,31 +143,6 @@ require_once 'settings.php';
             </section>
         </main>
 
-        <script type="text/javascript">
-            function SelectText(element) {
-                var doc = document
-                    , text = doc.getElementById(element)
-                    , range, selection
-                ;
-                if (doc.body.createTextRange) {
-                    range = document.body.createTextRange();
-                    range.moveToElementText(text);
-                    range.select();
-                } else if (window.getSelection) {
-                    selection = window.getSelection();
-                    range = document.createRange();
-                    range.selectNodeContents(text);
-                    selection.removeAllRanges();
-                    selection.addRange(range);
-                }
-                }
-
-                document.onclick = function(e) {
-                if (e.target.className === 'selectall') {
-                    SelectText('generatedText');
-                }
-            };
-        </script>
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <script src="build/js/main.min.js"></script>
 
