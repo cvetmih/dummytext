@@ -4,6 +4,11 @@ This is my own version of dummy text generator, hopefully it will make some use.
 
 ## Version Log
 
+* **v0.04**
+
+    * Added paragraph and character length type
+    * Improved styling
+
 * **v0.03**
 
     * Added defining constants to `settings.php`

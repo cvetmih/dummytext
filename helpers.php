@@ -66,7 +66,7 @@ function slugify($text){
 
 }
 
-function humanize($text){
+function humanizeParagraph($text){
 
 
     $boom = explode('.', $text);
@@ -83,6 +83,7 @@ function humanize($text){
             if($sentence == $lastSentence){
                 // echo '"' . ucfirst(trim($sentence)) . '"';
                 $newtext .= ucfirst(trim($sentence));
+
             }
             else{
                 // echo '"' . ucfirst(trim($sentence)) . '. "<br />';
@@ -144,12 +145,33 @@ function humanize($text){
     $newtext = rtrim($newtext, "!");
     $newtext = rtrim($newtext, ".");
 
-
     $newtext = ucfirst(trim($newtext));
-    $newtext .= '.';
 
-    return $newtext;
+    return $newtext . '.';
 
+}
+
+function humanize($text, $lengthtype){
+    if($lengthtype == 'words' || $lengthtype == 'characters'){
+        $text = humanizeParagraph($text);
+    }
+    elseif ($lengthtype == 'paragraphs') {
+        $boom = explode('|||', $text);
+        $text = '';
+        foreach($boom as $paragraph){
+
+            if(!empty($paragraph)){
+
+            $text .= '<p>' . ucfirst(humanizeParagraph($paragraph) . '</p>');
+
+            }
+
+            // $text .= mb_convert_case($paragraph, MB_CASE_TITLE, "UTF-8");
+
+        }
+
+    }
+    return $text;
 }
 
 ?>

@@ -327,7 +327,7 @@ zařval
 prstu
 visela
 krysa
-prašivka
+Prašivka
 malé
 ostré
 zoubky
@@ -340,7 +340,7 @@ couvali
 zatímco
 vřískal
 mával
-prašivkou
+Prašivkou
 sem
 tam
 konečně
@@ -371,7 +371,7 @@ zemi
 který
 právě
 zvedal
-prašivku
+Prašivku
 ocas
 jí
 vyrazil
