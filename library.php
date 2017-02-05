@@ -124,10 +124,10 @@ function listLibraries($type){
                     $lang = ' ('. strtoupper($file_name[0]) . ')';
 
                     if($lang == ' (CZ)'){
-                        $lang_img = '<img src="http://static.webshopapp.com/shops/094414/files/053825012/the-czech-republic-flag-icon-free-download.jpg" class="icon-flag" />';
+                        $lang_img = '<img src="img/flags/cz.png" class="icon-flag" alt="Čeština" />';
                     }
                     elseif($lang == ' (EN)'){
-                        $lang_img = '<img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1280px-Flag_of_the_United_Kingdom.svg.png" class="icon-flag" />';
+                        $lang_img = '<img src="img/flags/en.png" class="icon-flag" alt="English" />';
 
                     }
                     else{

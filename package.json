@@ -1,0 +1,38 @@
+{
+  "name": "dummy-text-generator",
+  "version": "0.0.5",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-strip-debug": "^1.1.0",
+    "gulp-uglify": "^2.0.1"
+  },
+  "description": "This is my own version of dummy text generator, hopefully it will make some use.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cvetmih/dummytext.git"
+  },
+  "keywords": [
+    "dummy",
+    "text",
+    "generator",
+    "lipsum",
+    "lorem",
+    "ipsum",
+    "random"
+  ],
+  "author": "Mihailo Cvetkovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cvetmih/dummytext/issues"
+  },
+  "homepage": "https://github.com/cvetmih/dummytext#readme"
+}

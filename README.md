@@ -4,6 +4,12 @@ This is my own version of dummy text generator, hopefully it will make some use.
 
 ## Version Log
 
+* **v0.05**
+
+    * Added character limit to new library textarea
+    * Included jQuery just for the eyecandy purpose
+    * Started using uglified (S)CSS and JS
+
 * **v0.04**
 
     * Added paragraph and character length type
