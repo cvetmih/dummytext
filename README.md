@@ -49,16 +49,17 @@ It will use GET method to obtain the input parameters. `?lengthtype=words&length
 
 ##### Available GET parameters
 
-| Key    | Parameter  | Children          | Usage                                              |
-| :----: | :--------: |:-----------------:| :------------------------------------------------- |
-| action | newtext    |                   | When new text is generated                         |
-|        |            | library           | What library should be used for the generated text |
-|        |            | length            | Length of the generated text                       |
-|        |            | lengthtype        | Length measurement (words, letters, characters)    |
-| action | newlibrary |                   | When new library is being created                  |
-|        |            | newlibrarytext    | Text to be parsed as library                       |
-| action | newlibrary | newlibraryname    | Name of the new library                            |
-| action | newlibrary | newlibrarylang    | Language of the new library                        |
+| Key    | Parameter  | Children          | Usage                                                                                                |
+| :----: | :--------: |:-----------------:| :--------------------------------------------------------------------------------------------------- |
+| action | newtext    |                   | When new text is generated                                                                           |
+|        |            | library           | What library should be used for the generated text                                                   |
+|        |            | length            | Length of the generated text                                                                         |
+|        |            | lengthtype        | Length measurement (words, letters, characters)                                                      |
+| action | newlibrary |                   | When new library is being created                                                                    |
+|        |            | newlibrarytext    | Text to be parsed as library                                                                         |
+|        |            | newlibraryname    | Name of the new library                                                                              |
+|        |            | newlibrarylang    | Language of the new library                                                                          |
+| manual | add        |                   | Adds string defined in `index.php` as a library instead of textarea input (use when too big for GET) |
 
 ---
 
