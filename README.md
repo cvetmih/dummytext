@@ -68,21 +68,22 @@ Here you will be able to create, edit and remove dictionaries used by the genera
 
 ##### loadLibrary(_Name_, _Language_) function
 
-    1. **Name:** Name of the text file which contains the library
-    2. **Language:** Language of the wanted library (maybe will be depreciated)
+1. **Name:** Name of the text file which contains the library
+2. **Language:** Language of the wanted library (maybe will be depreciated)
 
-    * Tries to load library, if it exists it will return the library as an `array`, if not it will return `false`
+* Tries to load library, if it exists it will return the library as an `array`, if not it will return `false`
 
 ##### newLibrary(_Name_, _Language_) function
 
-    * Parse text, take each word in lowercase and add it to array.
-    * Look for bad words, nonsense and duplicates.
-    * Create new `.txt` file with the new library.
+* Parse text, take each word in lowercase and add it to array.
+* Look for bad words, nonsense and duplicates.
+* Create new `.txt` file with the new library.
 
 ##### listLibraries(_Type_) function
-    1. **Type:** How to list libraries (currently `ol` or `select` - ordered list or select type input)
 
-    * Lists all available libraries in wanted way
+1. **Type:** How to list libraries (currently `ol` or `select` - ordered list or select type input)
+
+* Lists all available libraries in wanted way
 
 ---
 
@@ -92,11 +93,11 @@ Here you will be able to create, edit and remove dictionaries used by the genera
 
 ##### createText(_Library_, _LengthType_, _Length_) function
 
-    1. **Library:** Library to choose words from
-    2. **LengthType:** Whether it's words, letters or characters
-    3. **Length:** Whether it's words, letters or characters
+1. **Library:** Library to choose words from
+2. **LengthType:** Whether it's words, letters or characters
+3. **Length:** Whether it's words, letters or characters
 
-    * Creates text, then uses `humanize` function to make it look more realistic.
+* Creates text, then uses `humanize` function to make it look more realistic.
 
 ---
 
