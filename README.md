@@ -52,11 +52,11 @@ It will use GET method to obtain the input parameters. `?lengthtype=words&length
 | Key    | Parameter  | Children          | Usage                                              |
 | :----: | :--------: |:-----------------:| :------------------------------------------------- |
 | action | newtext    |                   | When new text is generated                         |
-| action | newtext    | library           | What library should be used for the generated text |
-| action | newtext    | length            | Length of the generated text                       |
-| action | newtext    | lengthtype        | Length measurement (words, letters, characters)    |
+|        |            | library           | What library should be used for the generated text |
+|        |            | length            | Length of the generated text                       |
+|        |            | lengthtype        | Length measurement (words, letters, characters)    |
 | action | newlibrary |                   | When new library is being created                  |
-| action | newlibrary | newlibrarytext    | Text to be parsed as library                       |
+|        |            | newlibrarytext    | Text to be parsed as library                       |
 | action | newlibrary | newlibraryname    | Name of the new library                            |
 | action | newlibrary | newlibrarylang    | Language of the new library                        |
 
