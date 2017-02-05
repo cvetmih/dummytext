@@ -7,6 +7,7 @@ This is my own version of dummy text generator, hopefully it will make some use.
 * **v0.05**
 
     * Added character limit to new library textarea
+    * Included local chopped Bootstrap CSS
     * Included jQuery just for the eyecandy purpose
     * Started using uglified (S)CSS and JS
 
