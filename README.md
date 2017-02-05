@@ -4,6 +4,12 @@ This is my own version of dummy text generator, hopefully it will make some use.
 
 ## Version Log
 
+* **v0.06**
+
+    * Switched from `GET` to `POST`
+    * Added Select all link
+    * Improved CSS
+
 * **v0.05**
 
     * Added character limit to new library textarea
@@ -41,7 +47,7 @@ This is my own version of dummy text generator, hopefully it will make some use.
 ## Planned features
 
 * Multiple languages
-* Switch from `GET` to `POST`
+* ~~Switch from `GET` to `POST`~~
 * ~~Length type - letters, paragraphs~~
 * Formatting - paragraphs, html
 * HTML formatting - add random html tags

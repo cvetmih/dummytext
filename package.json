@@ -1,6 +1,6 @@
 {
   "name": "dummy-text-generator",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-cache": "^0.4.5",

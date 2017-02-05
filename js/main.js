@@ -1,7 +1,9 @@
 function countChar(val) {
         val = $(val);
         var maxLen = 1900;
-        var len = val.val().length;
+        if(val.val() !== undefined){
+            var len = val.val().length;
+
 
         var charNum = $('#charNum');
         if (len > maxLen) {
@@ -29,16 +31,40 @@ function countChar(val) {
           charNum.removeClass('error');
           charNum.text( len + '/' + maxLen );
         }
+    }
 
-      };
-
+};
 
 $( document ).ready(function(){
     $('body').removeClass('no-js');
-  validate();
-  if(('#newLibraryText').length>0){
-      countChar('#newLibraryText');
-  }
+    validate();
+
+    if(('#newLibraryText').length){
+        countChar('#newLibraryText');
+    }
+
+    if($('#generatedText').length){
+
+
+
+
+       var wrapper = $('body'),
+           element = wrapper.find('#generatedText'),
+           lastElement = wrapper.find('#generatedText'),
+           lastElementTop = element.position().top,
+           elementsHeight = element.outerHeight(),
+           scrollAmount = lastElementTop;
+           console.log(scrollAmount);
+           $('body').animate({
+               scrollTop: scrollAmount
+           }, 1000, function() {
+               lastElement.addClass('current-last');
+           });
+           var selectAllLink = '<span id="selectall_wrap"><a href="javascript:void(0);" class="selectall">Select all!</a></span>';
+           $(selectAllLink).insertBefore($('#generatedText'));
+
+
+    }
 });
 
 $('form').keyup(function(){
@@ -65,7 +91,7 @@ function validate(){
     if(validate == true){
         button.removeClass('disabled');
         button.removeAttr('disabled');
-        button.html('Create library');
+        button.html(button.data('value'));
     }
     else{
         button.attr('disabled','disabled');

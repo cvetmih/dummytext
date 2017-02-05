@@ -116,7 +116,7 @@ function listLibraries($type){
             if($bad == 0){
 
                     $file_name_initial = $files->getFilename();
-                    // $my_page = file_get_contents(LIBS. $file_name); //Collect the content of the file.
+                    // $my_page = file_POST_contents(LIBS. $file_name); //Collect the content of the file.
                     $file_name = explode('.txt', $file_name_initial);
 
                     $file_name = explode('.', $file_name[0]);
@@ -145,7 +145,7 @@ function listLibraries($type){
                     }
                     elseif ($type == 'select') {
                         echo '<option value="' . $file_name_initial . '" ';
-                        if ($file_name_initial == $_GET['library']) echo ' selected ';
+                        if ($file_name_initial == $_POST['library']) echo ' selected ';
                         echo '>' . $file_name . $lang . '</option>';
                     }
             }

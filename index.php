@@ -28,8 +28,8 @@ require_once 'settings.php';
             <nav>
 
                 <ul id="navigation">
-                    <li><a href="index.php" title="Generate dummy text" <?php $active = ($_GET['action'] !==  'newlibrary') ? 'class="active"' : ''; echo $active; ?>>Generate text</a></li>
-                    <li><a href="index.php?action=newlibrary" title="Create a new library" <?php $active = ($_GET['action'] ==  'newlibrary') ? 'class="active"' : ''; echo $active; ?>>Create a library</a></li>
+                    <li><a href="index.php" title="Generate dummy text" <?php $active = ($_GET['action'] !==  'newlibrary' && $_POST['action'] !==  'newlibrary') ? 'class="active"' : ''; echo $active; ?>>Generate text</a></li>
+                    <li><a href="index.php?action=newlibrary" title="Create a new library" <?php $active = ($_POST['action'] ==  'newlibrary' || $_GET['action'] ==  'newlibrary') ? 'class="active"' : ''; echo $active; ?>>Create a library</a></li>
                 </ul>
 
             </nav>
@@ -40,7 +40,7 @@ require_once 'settings.php';
 <?php
 
 
-        if($_GET['manual'] == 'add'){
+        if($_POST['manual'] == 'add'){
 
             $name = 'New Library';
             $lang = 'en';
@@ -51,14 +51,14 @@ require_once 'settings.php';
             }
         }
 
-        if($_GET['action'] == 'newlibrary'){
+        if($_POST['action'] == 'newlibrary' || $_GET['action'] == 'newlibrary'){
 
 
-            if(!isset($_GET['newlibrarytext'])){
+            if(!isset($_POST['newlibrarytext'])){
 
                 ?>
                 <header><h2>Create a new library</h2></header>
-                <form action="./" method="get" id="newLibraryForm">
+                <form action="index.php" method="POST" id="newLibraryForm">
                 <input type="hidden" name="action" value="newlibrary" />
                   <div class="form-group slideLabel">
                     <label for="newLibraryName">Library name</label>
@@ -76,7 +76,7 @@ require_once 'settings.php';
                   <div class="clearfix">
 
                   </div>
-                  <button type="submit" class="btn btn-default">Fill all inputs</button>
+                  <button type="submit" class="btn btn-default" data-value="Generate new library">Generate new library</button>
                 </form>
 
 
@@ -87,7 +87,7 @@ require_once 'settings.php';
 
                 // PROCESS THE LIBRARY
 
-                $newlibrary = newLibrary($_GET['newlibraryname'], $_GET['newlibrarylang'], $_GET['newlibrarytext']);
+                $newlibrary = newLibrary($_POST['newlibraryname'], $_POST['newlibrarylang'], $_POST['newlibrarytext']);
                 echo $newlibrary;
 
 
@@ -100,7 +100,7 @@ require_once 'settings.php';
             ?>
             <header><h2>Generate text</h2></header>
 
-            <form action="./" method="get" id="newTextForm">
+            <form action="index.php" method="POST" id="newTextForm">
             <input type="hidden" name="action" value="newtext" />
               <div class="form-group">
                 <label for="generateLibrary">Library name</label>
@@ -108,31 +108,31 @@ require_once 'settings.php';
               </div>
               <div class="form-group inline-input">
                 <label for="generateLength">Length</label>
-                <input type="number" name="length" value="<?php $length = (!empty($_GET['length'])) ? $_GET['length'] : '100'; echo $length; ?>"  class="form-control" id="generateLength" required="required">
+                <input type="number" name="length" value="<?php $length = (!empty($_POST['length'])) ? $_POST['length'] : '100'; echo $length; ?>"  class="form-control" id="generateLength" required="required">
               </div>
               <div class="form-group inline-input">
                 <label for="generateLengthType">Length type</label>
                 <select name="lengthtype" class="form-control" id="generateLengthType">
-                    <option value="words" <?php if($_GET['lengthtype'] == 'words') echo 'selected'; ?>>Words</option>
-                    <option value="paragraphs" <?php if($_GET['lengthtype' ]== 'paragraphs') echo 'selected'; ?>>Paragraphs</option>
-                    <option value="characters" <?php if($_GET['lengthtype'] == 'characters') echo 'selected'; ?>>Characters</option>
+                    <option value="words" <?php if($_POST['lengthtype'] == 'words') echo 'selected'; ?>>Words</option>
+                    <option value="paragraphs" <?php if($_POST['lengthtype' ]== 'paragraphs') echo 'selected'; ?>>Paragraphs</option>
+                    <option value="characters" <?php if($_POST['lengthtype'] == 'characters') echo 'selected'; ?>>Characters</option>
                 </select>
               </div>
-              <button type="submit" class="btn btn-default">Do the magic!</button>
+              <button type="submit" class="btn btn-default" data-value="Do the magic!">Do the magic!</button>
             </form>
 
             <?php
         }
 
-        if($_GET['action'] == 'newtext' && !empty($_GET['length'])){
+        if($_POST['action'] == 'newtext' && !empty($_POST['length'])){
 
-            $lib = sanitize($_GET['library']);
-            $length = sanitize($_GET['length']);
-            $lengthtype = sanitize($_GET['lengthtype']);
+            $lib = sanitize($_POST['library']);
+            $length = sanitize($_POST['length']);
+            $lengthtype = sanitize($_POST['lengthtype']);
 
             $library = loadLibrary($lib, 'en');
             $text = createText($library, $lengthtype, $length);
-            echo '<a href="javascript:void(0);" class="selectall">Select all!</a>';
+
             echo '<div id="generatedText">';
                 echo $text;
             echo '</div>';
