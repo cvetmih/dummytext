@@ -41,9 +41,12 @@ This is my own version of dummy text generator, hopefully it will make some use.
 ## Planned features
 
 * Multiple languages
-* Length type - letters, paragraphs
+* Switch from `GET` to `POST`
+* ~~Length type - letters, paragraphs~~
 * Formatting - paragraphs, html
 * HTML formatting - add random html tags
+* Improve text humanizing
+* Secure code
 * Lots of other fun stuff
 
 ## Needed files
