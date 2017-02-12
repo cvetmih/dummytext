@@ -70,8 +70,7 @@ require_once 'settings.php';
                   </div>
                   <div class="form-group slideLabel">
                     <label for="newLibraryText">Paste your text</label>
-                    <textarea name="newlibrarytext" rows="8" class="form-control" id="newLibraryText" maxlength="1900" onkeyup="countChar(this)" required="required"></textarea>
-                    <div id="charNum"></div>
+                    <textarea name="newlibrarytext" rows="8" class="form-control" id="newLibraryText" required="required"></textarea>
                   </div>
                   <div class="clearfix">
 

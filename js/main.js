@@ -1,47 +1,6 @@
-function countChar(val) {
-        val = $(val);
-        var maxLen = 1900;
-        if(val.val() !== undefined){
-            var len = val.val().length;
-
-
-        var charNum = $('#charNum');
-        if (len > maxLen) {
-            var toBe = val.val().substring(0, maxLen);
-          val.val(toBe);
-          charNum.addClass('error');
-          if($('#shortened').length > 0) {
-              $('#shortened').remove();
-          }
-              var howMuch = len-maxLen;
-              if(howMuch > 1){
-                  howMuch += ' characters';
-              }
-              else{
-                  howMuch += ' character';
-              }
-              charNum.parents('.form-group').append('<b id="shortened">Your string was shortened by '+ howMuch +'.</b>');
-
-
-          len = val.val().length;
-          charNum.text( len + '/' + maxLen );
-        //   $('#shorten').fadeIn();
-
-        } else {
-          charNum.removeClass('error');
-          charNum.text( len + '/' + maxLen );
-        }
-    }
-
-};
-
 $( document ).ready(function(){
     $('body').removeClass('no-js');
     validate();
-
-    if(('#newLibraryText').length){
-        countChar('#newLibraryText');
-    }
 
     if($('#generatedText').length){
 
